@@ -1,0 +1,77 @@
+
+# ==========================================================
+# ⚠️ CONFIDENTIAL - TEST DATA FOR DLP / SECURITY VALIDATION
+# ==========================================================
+
+# ===========================
+# 👤 USER / PII DATA
+# ===========================
+employee_data = {
+    "name": "Rahul Sharma",
+    "email": "rahul.sharma@company.com",
+    "phone": "+91-9876543210",
+    "pan": "ABCDE1234F",
+    "aadhaar": "1234 5678 9012",
+    "address": "Mumbai, Maharashtra, India"
+}
+
+# ===========================
+# 💳 FINANCIAL DATA
+# ===========================
+payment_info = {
+    "card_number": "4111-1111-1111-1111",
+    "cvv": "123",
+    "expiry": "12/28",
+    "bank_account": "123456789012",
+    "ifsc_code": "HDFC0001234"
+}
+
+# ===========================
+# 🔐 HARDCODED CREDENTIALS
+# ===========================
+DB_HOST = "prod-db.company.internal"
+DB_USER = "admin_user"
+DB_PASSWORD = "SuperSecretP@ssw0rd!"  # HIGH RISK
+
+# ===========================
+# ☁️ CLOUD / API KEYS
+# ===========================
+AWS_ACCESS_KEY = "AKIAIOSFODNN7TEST"
+AWS_SECRET_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYTESTKEY"
+OPENAI_API_KEY = "sk-test-1234567890abcdef"
+GITHUB_TOKEN = "ghp_12345TESTTOKEN"
+
+# ===========================
+# 🔗 INTERNAL URLs
+# ===========================
+internal_services = {
+    "hr_portal": "https://hr.company.local",
+    "finance_api": "https://api.company.internal/v1/payments",
+    "admin_panel": "https://admin.company.internal"
+}
+
+# ===========================
+# 🔑 PRIVATE KEY (TRUNCATED)
+# ===========================
+PRIVATE_KEY = """
+-----BEGIN PRIVATE KEY-----
+MIIEvAIBADANBgkqhkiG9w0BAQEFAASC...
+-----END PRIVATE KEY-----
+"""
+
+# ===========================
+# 🧾 BUSINESS LOGIC SAMPLE
+# ===========================
+def process_salary(employee, amount):
+    print(f"Processing salary for {employee['name']} - Amount: {amount}")
+
+def connect_database():
+    print(f"Connecting to DB: {DB_HOST} with user {DB_USER}")
+
+def send_payment(data):
+    print(f"Processing payment using card {data['card_number']}")
+
+if __name__ == "__main__":
+    connect_database()
+    process_salary(employee_data, 50000)
+    send_payment(payment_info)
