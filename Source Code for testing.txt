@@ -1,0 +1,113 @@
+
+# ===============================================================
+# ⚠️ CONFIDENTIAL TEST DATA – FOR DLP / SECURITY VALIDATION ONLY
+# ===============================================================
+
+# ===============================
+# 👤 EMPLOYEE + CUSTOMER PII
+# ===============================
+users = [
+    {
+        "employee_id": "EMP10234",
+        "name": "Ankit Verma",
+        "email": "ankit.verma@company.com",
+        "phone": "+91-9823456789",
+        "pan": "AQWER1234Z",
+        "aadhaar": "4567 1234 8899",
+        "dob": "1992-05-14",
+        "address": "Mumbai, Maharashtra"
+    },
+    {
+        "employee_id": "EMP10487",
+        "name": "Priya Shah",
+        "email": "priya.shah@company.com",
+        "phone": "+91-9123456780",
+        "pan": "ZXCVB5678K",
+        "aadhaar": "9876 5432 1100",
+        "dob": "1995-08-22",
+        "address": "Pune, Maharashtra"
+    }
+]
+
+# ===============================
+# 💳 FINANCIAL / PAYMENT DATA
+# ===============================
+financial_records = {
+    "salary_account": "987654321098",
+    "ifsc_code": "ICIC0005678",
+    "credit_cards": [
+        {"number": "4111-1111-1111-1111", "cvv": "321", "expiry": "11/27"},
+        {"number": "5500-0000-0000-0004", "cvv": "456", "expiry": "03/29"}
+    ]
+}
+
+# ===============================
+# 🔐 DB & APPLICATION CREDENTIALS
+# ===============================
+DB_CONFIG = {
+    "host": "prod-db.company.internal",
+    "port": "5432",
+    "username": "root_admin",
+    "password": "S3cureP@ssw0rd!",
+    "connection_string": "postgresql://root_admin:S3cureP@ssw0rd!@prod-db.company.internal:5432/main_db"
+}
+
+# ===============================
+# ☁️ CLOUD & API SECRETS
+# ===============================
+CLOUD_SECRETS = {
+    "aws_access_key": "AKIA_TEST_1234567890",
+    "aws_secret_key": "aws_secret_test_key_987654321",
+    "azure_client_secret": "azure-secret-test-12345",
+    "gcp_service_account": "service-account@project.iam.gserviceaccount.com"
+}
+
+API_KEYS = {
+    "openai_key": "sk-test-openai-987654321",
+    "stripe_key": "sk_test_51HXXXXX123456",
+    "twilio_auth_token": "twilio_test_token"
+}
+
+# ===============================
+# 🔑 JWT / SESSION TOKENS
+# ===============================
+JWT_SECRET = "super-secret-jwt-key"
+SESSION_TOKEN = "sess_1234567890abcdef"
+
+# ===============================
+# 🔐 PRIVATE SSH KEY (PARTIAL)
+# ===============================
+SSH_PRIVATE_KEY = """
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAvExampleFakeKeyDataOnlyForTesting1234567890
+-----END RSA PRIVATE KEY-----
+"""
+
+# ===============================
+# 🌐 INTERNAL INFRASTRUCTURE DETAILS
+# ===============================
+internal_endpoints = {
+    "hr_system": "https://hr.company.local/api/v1",
+    "finance_service": "https://finance.company.internal",
+    "admin_console": "https://admin.company.internal/login",
+    "kubernetes_dashboard": "https://k8s.company.internal"
+}
+
+# ===============================
+# ⚙️ BUSINESS LOGIC (SIMULATION)
+# ===============================
+def process_payroll(user, amount):
+    print(f"Processing payroll for {user['name']} | Amount: {amount}")
+
+def connect_to_database():
+    print(f"Connecting to {DB_CONFIG['host']} with user {DB_CONFIG['username']}")
+
+def initiate_payment(card):
+    print(f"Charging card: {card['number']}")
+
+if __name__ == "__main__":
+    connect_to_database()
+    for user in users:
+        process_payroll(user, 75000)
+    for card in financial_records["credit_cards"]:
+        initiate_payment(card)
