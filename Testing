@@ -1,0 +1,50 @@
+
+# ============================================
+# WARNING: TEST DATA FOR DLP DEMONSTRATION ONLY
+# ============================================
+
+# Hardcoded credentials (Dummy)
+DB_USERNAME = "admin_user"
+DB_PASSWORD = "P@ssw0rd123!"  # Sensitive
+
+# API Keys (Dummy)
+AWS_ACCESS_KEY = "AKIA123456789TEST"
+AWS_SECRET_KEY = "abcd1234secretkeyexample"
+GOOGLE_API_KEY = "AIzaSyDUMMY-TEST-KEY-12345"
+
+# Database Connection String
+DB_CONNECTION = "postgresql://admin_user:P@ssw0rd123!@db.example.com:5432/customer_db"
+
+# JWT Token (Dummy)
+JWT_SECRET = "supersecretjwtkey12345"
+
+# Credit Card (Test format)
+sample_credit_card = "4111-1111-1111-1111"
+
+# PAN (India - Fake/Test)
+pan_number = "ABCDE1234F"
+
+# Aadhaar (Fake/Test)
+aadhaar_number = "1234 5678 9012"
+
+# Email & PII
+user_email = "test.user@example.com"
+phone_number = "+91-9876543210"
+
+# Private Key (Dummy truncated example)
+PRIVATE_KEY = """
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASC...
+-----END PRIVATE KEY-----
+"""
+
+# Function using sensitive data
+def connect_to_db():
+    print(f"Connecting with {DB_USERNAME}:{DB_PASSWORD}")
+
+def process_payment():
+    print(f"Processing card: {sample_credit_card}")
+
+if __name__ == "__main__":
+    connect_to_db()
+    process_payment()
